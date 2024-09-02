@@ -7,9 +7,11 @@
 
     <title>Dream Wedding</title>
 
-    <link rel="stylesheet" href="themify-icons/">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/main.js" defer></script>
+    
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -26,13 +28,15 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <span class="loader"></span>
+    </div>
     <header>
 
         <nav>
+            <div class=" toolbar">
 
-            <div class="toolbar">
-
-                <div class="logo">
+                <div class=" logo">
                     <a href="index.html">
                         <img src="assets/images/logo.png" alt="Logo" class="logo" />
                     </a>
@@ -45,7 +49,7 @@
                 </div>
                 <div>
                     <ul class="login">
-                        <li>
+                        <li id="nut-dang-nhap">
                             <a href="#"><i class="fa-solid fa-user icons"></i></a>
                         </li>
                         <li>
@@ -82,12 +86,10 @@
                     <a href="menu.html">Thực đơn</a>
                 </li>
                 <li class="sub">
-                    <a href="#">Về chúng tôi</a>
-
+                    <a href="aboutus.html">Về chúng tôi</a>
                 </li>
                 <li class="sub">
                     <a href="contact.html">Liên hệ</a>
-
                 </li>
             </ul>
 
@@ -157,6 +159,63 @@
                 </script>
             </div>
         </section>
+
+            <!--ĐĂNG NHẬP-->
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Đăng ký</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc sử dụng email để đăng ký</span>
+                <input type="text" placeholder="Tên đăng nhập" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Mật khẩu" />
+                
+                <button>Đăng ký</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Đăng nhập</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-google"></i></a>
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc sử dụng tài khoản của bạn</span>
+                <input type="text" placeholder="Tên đăng nhập" />
+                <input type="password" placeholder="Mật khẩu" />
+                <a class="forget-password" href="#">Quên mật khẩu?</a>
+                <button>Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <!-- <div> -->
+            
+                <div class="overlay">
+                    <div>
+                    </div>
+                    <div class="overlay-panel overlay-left">
+                        <h1>CHÀO QUÝ KHÁCH !</h1>
+                        <p>Đăng nhập để sử dụng các dịch vụ của chúng tôi</p>
+                        <button class="ghost" id="signIn" style="color: white;">Đăng nhập</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>CHÀO BẠN !</h1>
+                        <p>Đăng ký tài khoản để có thể đặt tiệc</p>
+                        <button class="ghost" id="signUp" style="color: white;">Đăng ký</button>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
     </main>
 
 
