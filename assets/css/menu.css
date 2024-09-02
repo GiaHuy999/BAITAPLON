@@ -1,0 +1,61 @@
+section.content{
+  height: auto;
+}
+div.slide {
+  padding-top: 20px;
+  
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-inner{
+  display: none;
+   transition: opacity 0.4s ease;
+}
+.slide-inner.active {
+  overflow: hidden;
+  display: flex !important;
+}
+
+.slide-page {
+  display: flex;
+  min-width: 100%;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+  width: 25%; /* 4 ảnh trên mỗi hàng, 3 hàng để tối đa 12 ảnh */
+  padding: 10px; /* Điều chỉnh padding để ảnh không bị quá gần nhau */
+}
+
+.slide-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px; /* Thêm border-radius nếu bạn muốn ảnh có góc bo tròn */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pagination button {
+  background-color: #fff8f5;
+  border: 1px solid #c48c64;
+  color: #845839;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pagination button:hover {
+  background-color: #c48c64;
+  color: #fff;
+}
