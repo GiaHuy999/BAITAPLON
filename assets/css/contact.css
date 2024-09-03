@@ -1,6 +1,7 @@
-.content>div{
+.content>div {
   position: relative;
 }
+
 .infor-contact {
   padding: 0;
   width: 50%;
@@ -27,9 +28,10 @@
 }
 
 
-.contact-form{
+.contact-form {
   display: flex;
-  position: relative !important;;
+  position: relative !important;
+  ;
   flex-direction: column;
   flex-wrap: wrap;
   width: 50%;
@@ -41,7 +43,7 @@
   height: 40px;
   margin: 8px 0;
   outline: none;
-  
+
   font-family: "Gilroy", sans-serif;
   font-size: 16px;
   padding-left: 10px;
@@ -66,12 +68,29 @@
   border: #e9ccba solid 1px;
 }
 
+/* Đảm bảo rằng phần tử chứa bản đồ .map căn giữa nội dung bên trong */
+.map {
+  display: flex;
+  /* Sử dụng flexbox để căn giữa các phần tử con */
+  justify-content: center;
+  /* Căn giữa theo chiều ngang */
+  width: 100%;
+  /* Chiếm toàn bộ chiều rộng của phần tử chứa */
+  padding: 20px 0 0 0;
+  /* Padding phía trên và dưới */
+}
+
+/* Đảm bảo rằng bản đồ #map chiếm toàn bộ chiều rộng của phần tử chứa nó */
 #map {
-  height: 400px;
   width: 70%;
-  position: relative;
-  margin-top: 20px;
-}
-.map{
-  position: relative;
-}
+  /* Chiếm 70% chiều rộng của phần tử chứa .map */
+  height: 400px;
+  /* Chiều cao cố định */
+  box-sizing: border-box;
+  /* Để padding không làm thay đổi kích thước tổng thể */
+  margin: 0;
+  /* Loại bỏ margin để bản đồ không bị lệch */
+
+  .chinhsach {
+    background-color: #fff8f5;s
+  }

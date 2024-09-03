@@ -11,16 +11,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <script src="assets/js/main.js" defer></script>
-    
+
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    
+
     <link rel="icon" href="assets/images/icon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
 
 
 
@@ -66,14 +64,7 @@
                 <li>
                     <a href="index.html">Trang chủ</a>
                 </li>
-                <li class="sub">
-                    <a href="#">Danh mục</a>
-                    <ul class="menu dropdown">
-                        <li><a href="#">s1</a></li>
-                        <li><a href="#">s2</a></li>
-                        <li><a href="#">s3</a></li>
-                    </ul>
-                </li>
+
                 <li class="sub">
                     <a href="#">Dịch vụ</a>
                     <ul class="menu dropdown">
@@ -86,6 +77,10 @@
                     <a href="menu.html">Thực đơn</a>
                 </li>
                 <li class="sub">
+                    <a href="#">Tin tức</a>
+                </li>
+                <li class="sub">
+
                     <a href="aboutus.html">Về chúng tôi</a>
                 </li>
                 <li class="sub">
@@ -134,10 +129,10 @@
                     <div><strong>Facebook: </strong> <a href="#">HN</a></div>
                 </div>
                 <div class="contact-form">
-                        <input type="text" placeholder="Họ và tên">
-                        <input type="number" placeholder="Số điện thoại">
-                        <input type="text" placeholder="Email">
-                        <textarea placeholder="Nội dung"></textarea>
+                    <input type="text" placeholder="Họ và tên">
+                    <input type="number" placeholder="Số điện thoại">
+                    <input type="text" placeholder="Email">
+                    <textarea placeholder="Nội dung"></textarea>
                 </div>
 
 
@@ -145,59 +140,60 @@
             <!-- <button type="submit"></button> -->
         </section>
         <section class="map">
-       
+
             <div id="map">
                 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
                 <script>
-                    var map = L.map('map').setView([10.6754047,106.6880946], 14);
-    
+                    var map = L.map('map').setView([10.6754047, 106.6880946], 14);
+
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-    
-                    L.marker([10.6754047,106.6880946]).addTo(map)
+
+                    L.marker([10.6754047, 106.6880946]).addTo(map)
                         // .bindPopup('Here!')
-                         .openPopup();
+                        .openPopup();
                 </script>
             </div>
         </section>
 
-            <!--ĐĂNG NHẬP-->
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Đăng ký</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-google"></i></a>
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>hoặc sử dụng email để đăng ký</span>
-                <input type="text" placeholder="Tên đăng nhập" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Mật khẩu" />
-                
-                <button>Đăng ký</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Đăng nhập</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-google"></i></a>
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>hoặc sử dụng tài khoản của bạn</span>
-                <input type="text" placeholder="Tên đăng nhập" />
-                <input type="password" placeholder="Mật khẩu" />
-                <a class="forget-password" href="#">Quên mật khẩu?</a>
-                <button>Đăng nhập</button>
-            </form>
-        </div>
-        <div class="overlay-container">
-            <!-- <div> -->
-            
+        <!--ĐĂNG NHẬP-->
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Đăng ký</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                    <span>hoặc sử dụng email để đăng ký</span>
+                    <input type="text" placeholder="Tên đăng nhập" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Mật khẩu" />
+
+                    <button>Đăng ký</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Đăng nhập</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>hoặc sử dụng tài khoản của bạn</span>
+                    <input type="text" placeholder="Tên đăng nhập" />
+                    <input type="password" placeholder="Mật khẩu" />
+                    <a class="forget-password" href="#">Quên mật khẩu?</a>
+                    <button>Đăng nhập</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <!-- <div> -->
+
                 <div class="overlay">
                     <div>
                     </div>
@@ -212,19 +208,57 @@
                         <button class="ghost" id="signUp" style="color: white;">Đăng ký</button>
                     </div>
                 </div>
-            <!-- </div> -->
+                <!-- </div> -->
+            </div>
         </div>
-    </div>
 
     </main>
 
-
-
-
-
-
-
-
+    <footer>
+        <section>
+            <div>
+                <div class=" logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo" />
+                    </a>
+                </div>
+                <div>
+                    <ul class="footer">
+                        <li class="fsub">Liên hệ
+                            <ul>
+                                <li>Xã Nhơn Đức, huyện Nhà Bè, TP. Hồ Chí Minh</li>
+                                <li>h&n@gmail.com</li>
+                                <li>0771212999</li>
+                            </ul>
+                        </li>
+                        
+                        <li class="fsub">Mục lục
+                            <ul>
+                                <li>Trang chủ</li>
+                                <li>Thực đơn</li>
+                                <li>Tin tức</li>
+                                <li>Về chúng tôi</li>
+                                <li>Liên hệ</li>
+                            </ul>
+                        </li>
+                        <li class="fsub">Chính sách
+                            <ul>
+                                <li>Chính sách thanh toán</li>
+                                <li>Chính sách bảo mật</li>
+                                <li>Chính sách ưu đãi</li>
+                                <li>Chính sách chung</li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                    <p>Copyright &copy; 2024 Designed by H&N</p>
+            </div>
+        </section>
+         
+    </footer>
 </body>
 
 </html>

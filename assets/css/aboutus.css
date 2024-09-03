@@ -1,19 +1,29 @@
-.infor-contact>div,
-h1 {
-
-  font-family: WixMade;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
-  text-align: center;
-  text-transform: uppercase;
-
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url("../font/PlayfairDisplay.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.divide-100 {
-  width: 100px;
-  border: 1px solid #191919;
-  border-radius: 5px;
-  margin: 15px 0;
+section.about {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
+section.about h1 {
+  margin: 20px 0;
+  font-family: PlayfairDisplay;
+  font-size: 50px;
+}
+
+section.about p {
+  margin: 0 auto;
+  width: 70%;
+  font-size: 25px;
+  line-height: 40px;
+  padding-bottom:25px;
 }

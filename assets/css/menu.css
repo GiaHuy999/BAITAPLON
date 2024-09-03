@@ -1,9 +1,9 @@
-section.content{
+section.content {
   height: auto;
 }
+
 div.slide {
   padding-top: 20px;
-  
   width: 80%;
   height: auto;
   margin: 0 auto;
@@ -12,10 +12,11 @@ div.slide {
   align-items: center;
 }
 
-.slide-inner{
+.slide-inner {
   display: none;
-   transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
 }
+
 .slide-inner.active {
   overflow: hidden;
   display: flex !important;
@@ -29,14 +30,17 @@ div.slide {
 }
 
 .slide-item {
-  width: 25%; /* 4 ảnh trên mỗi hàng, 3 hàng để tối đa 12 ảnh */
-  padding: 10px; /* Điều chỉnh padding để ảnh không bị quá gần nhau */
+  width: 25%;
+  /* 4 ảnh trên mỗi hàng, 3 hàng để tối đa 12 ảnh */
+  padding: 10px;
+  /* Điều chỉnh padding để ảnh không bị quá gần nhau */
 }
 
 .slide-item img {
   width: 100%;
   display: block;
-  border-radius: 8px; /* Thêm border-radius nếu bạn muốn ảnh có góc bo tròn */
+  border-radius: 8px;
+  /* Thêm border-radius nếu bạn muốn ảnh có góc bo tròn */
 }
 
 .pagination {

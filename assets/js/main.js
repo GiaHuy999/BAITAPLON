@@ -1,7 +1,7 @@
 
 window.onload = function() {
 
-//========================LOADING============================
+  //========================LOADING============================
   const loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.display = 'flex';
 
@@ -9,14 +9,14 @@ window.onload = function() {
     loadingScreen.style.display = 'none';
   }, 20);
 
-//========================ACCOUNT=============================
+  //========================ACCOUNT=============================
 
-  
+
   //----------------
 
 
   const loginButton = document.getElementById('nut-dang-nhap');
-  loginButton.addEventListener('click', function()  {
+  loginButton.addEventListener('click', function() {
     container.classList.toggle('hien-thi');
   });
   // closeLoginTab.addEventListener("click", function() {
@@ -31,28 +31,28 @@ window.onload = function() {
   const container = document.getElementById('container');
 
   signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
+    container.classList.add("right-panel-active");
   });
 
   signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
+    container.classList.remove("right-panel-active");
   });
-  
+
 
   //------------------signin-----------------------
-  
+
   const inputList = document.querySelectorAll('.sign-in-container input');
   const usernameInput = inputList[0];
   const passwordInput = inputList[1];
   const btnSubmit = document.querySelector('.sign-in-container button');
 
   // //------------------signup-----------------------
-  
+
   const inputSignupList = document.querySelectorAll('.sign-up-container input');
   const usernameSignupInput = inputSignupList[0];
   const passwordSignupInput = inputSignupList[2];
   const btnSignupSubmit = document.querySelector('.sign-up-container button');
-  
+
   const defaultUsers = [
     {
       username: 'admin',
@@ -122,10 +122,10 @@ window.onload = function() {
       alert('Invalid password');
       return;
     }
-  //--------------after login-----------------------
+    //--------------after login-----------------------
     window.location.href = 'menu.html';
   }
-//=====================SLIDE============================
+  //=====================SLIDE============================
   const prevButton = document.querySelector('.fa-angle-left');
   const nextButton = document.querySelector('.fa-angle-right');
   const carouselInner = document.querySelector('.carousel');
@@ -137,32 +137,128 @@ window.onload = function() {
   function updateCarousel() {
     carouselInner.style.transform = `translateX(${-itemWidth * index}px)`;
     if (index === 0) {
-        prevButton.classList.remove('dieu-huong');
+      prevButton.classList.remove('dieu-huong');
     } else {
-        prevButton.classList.add('dieu-huong');
+      prevButton.classList.add('dieu-huong');
     }
     if (index >= items.length - 3) {
-        nextButton.classList.remove('dieu-huong');
+      nextButton.classList.remove('dieu-huong');
     } else {
-        nextButton.classList.add('dieu-huong');
+      nextButton.classList.add('dieu-huong');
     }
   }
   //--------------------xu li slide------------------------
   updateCarousel();
-  
-  prevButton.addEventListener('click', function () {
+
+  prevButton.addEventListener('click', function() {
     if (index > 0) {
-        index -= 1;
-        updateCarousel();
+      index -= 1;
+      updateCarousel();
     }
   });
 
-  nextButton.addEventListener('click', function () {
+  nextButton.addEventListener('click', function() {
     if (index < items.length - 3) {
-        index += 1;
-        updateCarousel();
+      index += 1;
+      updateCarousel();
     }
   });
   //--------------------------------------------------------
 
+}
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const locationElement = document.getElementById('location');
+//   const tableQuantityElement = document.getElementById('table-quantity');
+//   const appetizersElement = document.getElementById('appetizers');
+//   const mainCoursesElement = document.getElementById('main-courses');
+//   const dessertsElement = document.getElementById('desserts');
+//   const winesElement = document.getElementById('wines');
+//   const photoConceptElement = document.getElementById('photo-concept');
+//   const totalAmountElement = document.getElementById('total-amount');
+
+//   let cart = {
+//     location: null,
+//     tables: {
+//       quantity: 0,
+//       appetizers: null,
+//       mainCourses: null,
+//       desserts: null,
+//       wines: null
+//     },
+//     photoStudio: {
+//       concept: null
+//     },
+//     totalAmount: 0
+//   };
+
+//   function updateCartDisplay() {
+//     if (cart.location) {
+//       locationElement.innerHTML = `<p>${cart.location}</p>`;
+//     } else {
+//       locationElement.innerHTML = `<p>Chưa chọn địa điểm.</p><a href="abc.html" class="button">Chọn địa điểm</a>`;
+//     }
+
+//     tableQuantityElement.textContent = cart.tables.quantity;
+//     appetizersElement.textContent = cart.tables.appetizers || 'Chưa chọn';
+//     mainCoursesElement.textContent = cart.tables.mainCourses || 'Chưa chọn';
+//     dessertsElement.textContent = cart.tables.desserts || 'Chưa chọn';
+//     winesElement.textContent = cart.tables.wines || 'Chưa chọn';
+//     photoConceptElement.textContent = cart.photoStudio.concept || 'Chưa chọn';
+
+//     // Giả lập tính toán tổng số tiền
+//     cart.totalAmount = cart.tables.quantity * 100; // Ví dụ: 100 là giá mỗi bàn tiệc
+//     totalAmountElement.textContent = `$${cart.totalAmount.toFixed(2)}`;
+//   }
+
+//   // Các hàm xử lý chỉnh sửa và cập nhật thông tin
+//   document.getElementById('edit-tables').addEventListener('click', function() {
+//     // Mở cửa sổ chỉnh sửa bàn tiệc (có thể là một modal)
+//     alert('Chức năng chỉnh sửa bàn tiệc chưa được triển khai.');
+//   });
+
+//   document.getElementById('edit-photo-studio').addEventListener('click', function() {
+//     // Mở cửa sổ chỉnh sửa studio chụp ảnh (có thể là một modal)
+//     alert('Chức năng chỉnh sửa studio chụp ảnh chưa được triển khai.');
+//   });
+
+//   document.getElementById('checkout-button').addEventListener('click', function() {
+//     alert('Chức năng thanh toán chưa được triển khai.');
+//   });
+
+//   updateCartDisplay();
+// });
+let list = document.querySelectorAll('.center .list .item');
+list.forEach(item => {
+  item.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add')) {
+      var itemNew = item.cloneNode(true);
+      let checkIsset = false;
+
+      let listCart = document.querySelectorAll('.cart .listCart .item');
+      listCart.forEach(cart => {
+        if (cart.getAttribute('data-key') == itemNew.getAttribute('data-key')) {
+          checkIsset = true;
+          cart.classList.add('danger');
+          setTimeout(function() {
+            cart.classList.remove('danger');
+          }, 1000)
+        }
+      })
+      if (checkIsset == false) {
+        document.querySelector('.cart .listCart').appendChild(itemNew);
+      }
+    }
+  })
+})
+
+function Remove(key) {
+  let listCart = document.querySelectorAll('.cart .listCart .item');
+  listCart.forEach(item => {
+    if (item.getAttribute('data-key') == key) {
+      item.remove();
+      return;
+    }
+  })
 }

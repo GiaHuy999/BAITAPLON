@@ -3,8 +3,8 @@ window.onload = function() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const pageBtns = document.querySelectorAll('.page-btn');
-    let currentPage = 1;
-    
+    let currentPage = 0;
+
     function showPage(index) {
         pages.forEach((page, i) => {
             page.style.transform = `translateX(-${index * 100}%)`;
@@ -19,7 +19,7 @@ window.onload = function() {
     });
 
     nextBtn.addEventListener('click', () => {
-        if (currentPage < (pages.length)/3 - 1) {
+        if (currentPage < (pages.length) / 3 - 1) {
             showPage(currentPage + 1);
         }
     });
@@ -30,22 +30,22 @@ window.onload = function() {
             showPage(pageIndex);
         });
     });
-//----------------------------------------------------------
+    //----------------------------------------------------------
     const slides = document.querySelectorAll('.slide-inner');
     const menus = document.querySelectorAll('ul.menu > li');
-    
-    
-    
+
+
+
     slides[0].classList.add('active');
-    for( let menu of menus){
+    for (let menu of menus) {
         menu.addEventListener('click', function() {
-            for( let slide of slides){
+            for (let slide of slides) {
                 slide.classList.remove('active');
             }
             let men = document.getElementById(`${menu.id}-inner`);
             men.classList.add('active');
             showPage(0);
-         
+
         });
     }
 };

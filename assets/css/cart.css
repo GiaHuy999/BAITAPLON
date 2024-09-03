@@ -1,0 +1,39 @@
+body{
+  background-color: white;
+}
+header{
+  background-color:#e4d4cd ;
+}
+.logo span {
+  margin: 0 15px;
+  height: 100%;
+  width: 1.5px;
+  background-color: #c48c63;
+  display: block;
+}
+
+.logo img{
+  width: 100px;
+}
+.logo div{
+  font-size:190%;
+  color: #c48b64;
+}
+div.logo{
+  margin-right: 20px;
+}
+section.cart-product{
+  position: relative;
+  background-color: #ffffff;
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+section.cart-product > div{
+  border-radius: 10px;
+  background-color: #c15c5c;
+  margin: 10px 0;
+  height: 150px;
+  width: 100%;
+}

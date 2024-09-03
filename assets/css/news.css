@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url("../font/Dosis.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+section.content {
+  height: auto;
+}
+
+div.slide {
+  padding-top: 20px;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-inner {
+  display: none;
+  transition: opacity 0.4s ease;
+}
+
+.slide-inner.active {
+  overflow: hidden;
+  display: flex !important;
+}
+
+.slide-page {
+  display: flex;
+  min-width: 100%;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+  margin-bottom: 30px;
+  width: 33.33%;
+  padding: 10px;
+  transition:all 0.3s ease;
+}
+
+.slide-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+
+
+}
+.slide-item:hover {
+  transform:translateY(-6px)
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pagination button {
+  background-color: #fff8f5;
+  border: 1px solid #c48c64;
+  color: #845839;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pagination button:hover {
+  background-color: #c48c64;
+  color: #fff;
+}
+.content h1{
+  margin-top: 10px;
+  margin-bottom:7px; 
+  color: #845839;
+  font-size: 20px;
+}
+.content p{
+  font-family: Dosis;
+  font-size: 17px;
+  margin: 0;
+}
