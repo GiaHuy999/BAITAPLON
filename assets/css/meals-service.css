@@ -1,25 +1,51 @@
-/* Định dạng cho trang đặt bàn */
+
 .content {
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }
 
-.booking-info {
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff8f5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info {
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info h1 {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-.booking-info h1 {
-    font-size: 30px;
-    padding: 20px 0;
+.image {
+    width: 30%;
+    flex-shrink: 0;
 }
 
-.booking-info p {
-    font-size: 18px;
+.image img {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
 }
 
 .booking-form {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 20px;
 }
 
 .booking-form input,
@@ -49,12 +75,12 @@
 }
 
 .current-time {
-    margin-top: 20px;
-    font-size: 18px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    background: rgb(133, 96, 96, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
-
-.current-time span {
-    font-weight: bold;
-}
-
-/* Các hiệu ứng và animation khác có thể được thêm vào đây */

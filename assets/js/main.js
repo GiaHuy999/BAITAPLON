@@ -60,7 +60,7 @@ window.onload = function() {
     },
   ];
 
-  // Hàm kiểm tra lần đầu load trang
+
   const handleFirstLoad = () => {
     if (!localStorage.getItem('users')) {
       localStorage.setItem('users', JSON.stringify(defaultUsers));
@@ -82,7 +82,7 @@ window.onload = function() {
     const user = users.find((user) => user.username === usernameValue);
 
     if (user) {
-      alert('User already exists');
+      alert('Tài khoản đã tồn tại!');
       return;
     }
 
@@ -93,7 +93,7 @@ window.onload = function() {
 
     localStorage.setItem('users', JSON.stringify(users));
 
-    alert('User created successfully');
+    alert('Tạo tài khoản thành công!');
 
     usernameValue.value = '';
     passwordValue.value = '';
@@ -114,12 +114,12 @@ window.onload = function() {
     const user = users.find((user) => user.username === usernameValue);
 
     if (!user) {
-      alert('User not found');
+      alert('Không tìm thấy tài khoản!');
       return;
     }
 
     if (user.password !== passwordValue) {
-      alert('Invalid password');
+      alert('Sai mật khẩu!');
       return;
     }
     //--------------after login-----------------------
@@ -165,23 +165,23 @@ window.onload = function() {
   });
   //--------------------------------------------------------
   document.getElementById('submit-feedback').addEventListener('click', function() {
-    // Lấy giá trị từ các input
+
     const name = document.getElementById('feedback-name').value;
     const email = document.getElementById('feedback-email').value;
     const message = document.getElementById('feedback-message').value;
 
-    // Kiểm tra nếu các trường đều được điền
+    
     if (name && email && message) {
-      // Tạo phần tử đánh giá mới
+      // Tạo 
       const newFeedback = document.createElement('div');
       newFeedback.classList.add('feedback-item');
       newFeedback.innerHTML = `<h4>${name}</h4><p>${message}</p>`;
 
-      // Thêm phần tử đánh giá mới lên trên cùng
+      // Thêm trên cùng
       const feedbackContainer = document.getElementById('view-feedback');
       feedbackContainer.insertBefore(newFeedback, feedbackContainer.firstChild);
 
-      // Xóa nội dung trong các input sau khi gửi
+      // Xóa 
       document.getElementById('feedback-name').value = '';
       document.getElementById('feedback-email').value = '';
       document.getElementById('feedback-message').value = '';

@@ -68,7 +68,7 @@
     border: #e9ccba solid 1px;
   }
 
-/* Đảm bảo rằng phần tử chứa bản đồ .map căn giữa nội dung bên trong */
+
 .map {
   display: flex;
   justify-content: center;

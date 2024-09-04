@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt Bàn Tiệc Cưới</title>
+    <title>Dream Wedding</title>
 
-    <link rel="stylesheet" href="assets/css/meals-service.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="icon" href="assets/images/icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
-    <script src="assets/js/main.js" defer></script>
+        <link rel="stylesheet" href="assets/css/place.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/login.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="icon" href="assets/images/icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+        <script src="assets/js/main.js" defer></script>
+        <!-- Thêm liên kết đến CSS và font-awesome -->
+        <link rel="stylesheet" href="assets/css/style.css"> <!-- Đảm bảo đường dẫn chính xác -->
+        <link rel="stylesheet" href="assets/css/place.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -74,40 +78,91 @@
         </div>
 
         <div class="toolbar-menu">
-            <h1>ĐẶT BÀN</h1>
+            <h1>ĐỊA ĐIỂM</h1>
             <div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Trang chủ</a></li>
                     <li>/</li>
-                    <li>Đặt bàn</li>
+                    <li>Địa điểm</li>
                 </ul>
             </div>
         </div>
     </header>
 
+
     <main>
-        <section class="content">
-            <div class="content-wrapper">
-                <div class="info">
-                    <h1>ĐẶT BÀN</h1>
-                    <p>Thông tin về việc đặt bàn tại nhà hàng của chúng tôi.</p>
-                </div>
-                <div class="image">
-                    <img src="assets/images/couple-1.jpg" alt="Image Description" />
-                </div>
-                <div class="booking-form">
-                    <input type="text" id="name" placeholder="Họ và tên" required>
-                    <input type="number" id="phone" placeholder="Số điện thoại" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="text" id="date" placeholder="Chọn ngày" class="datepicker" required>
-                    <input type="text" id="time" placeholder="Chọn giờ" class="timepicker" required>
-                    <textarea id="message" placeholder="Nội dung"></textarea>
-                    <button type="submit">Gửi Đặt Bàn</button>
-                </div>
+        <section class="gallery">
+            <div class="gallery-row">
+                <a href="#link1" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 1">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 1: ABC</span>
+                    </div>
+                </a>
+                <a href="#link2" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 2">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 2: DEF</span>
+                    </div>
+                </a>
+                <a href="#link3" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 3">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 3: GHI</span>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-row">
+                <a href="#link4" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 4">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 4: JKL</span>
+                    </div>
+                </a>
+                <a href="#link5" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 5">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 5: MNO</span>
+                    </div>
+                </a>
+                <a href="#link6" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 6">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 6: PQR</span>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-row">
+                <a href="#link7" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 7">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 7: STU</span>
+                    </div>
+                </a>
+                <a href="#link8" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 8">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 8: VWX</span>
+                    </div>
+                </a>
+                <a href="#link9" class="gallery-item">
+                    <img src="assets/images/sanh.jpg" alt="Địa điểm 9">
+                    <div class="gallery-info">
+                        <i class="fa-solid fa-location-pin"></i>
+                        <span>Địa điểm 9: YZA</span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-container">
             <div class="footer-section">

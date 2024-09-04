@@ -8,7 +8,6 @@
     <title>Dream Wedding</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/aboutus.css">
-    <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/cart.css">
     <link rel="stylesheet" href="assets/css/menu.css"/>
 
@@ -55,14 +54,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div>
-                    <ul class="login">
-                        <li id="nut-dang-nhap">
-                            <a href="#"><i class="fa-solid fa-user icons"></i></a>
-                        </li>
 
-                    </ul>
-                </div>
 
             </div>
         </nav>
@@ -70,112 +62,98 @@
 
     </header>
     <main>
-        <section class="content">
 
-        </section>
-        <!--ĐĂNG NHẬP-->
-        <div class="container" id="container">
-            <div class="form-container sign-up-container">
-                <form action="#">
-                    <h1>Đăng ký</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-google"></i></a>
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <span>hoặc sử dụng email để đăng ký</span>
-                    <input type="text" placeholder="Tên đăng nhập" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Mật khẩu" />
-
-                    <button>Đăng ký</button>
-                </form>
-            </div>
-            <div class="form-container sign-in-container">
-                <form action="#">
-                    <h1>Đăng nhập</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-google"></i></a>
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <span>hoặc sử dụng tài khoản của bạn</span>
-                    <input type="text" placeholder="Tên đăng nhập" />
-                    <input type="password" placeholder="Mật khẩu" />
-                    <a class="forget-password" href="#">Quên mật khẩu?</a>
-                    <button>Đăng nhập</button>
-                </form>
-            </div>
-            <div class="overlay-container">
-                <!-- <div> -->
-
-                <div class="overlay">
-                    <div>
-                    </div>
-                    <div class="overlay-panel overlay-left">
-                        <h1>CHÀO QUÝ KHÁCH !</h1>
-                        <p>Đăng nhập để sử dụng các dịch vụ của chúng tôi</p>
-                        <button class="ghost" id="signIn" style="color: white;">Đăng nhập</button>
-                    </div>
-                    <div class="overlay-panel overlay-right">
-                        <h1>CHÀO BẠN !</h1>
-                        <p>Đăng ký tài khoản để có thể đặt tiệc</p>
-                        <button class="ghost" id="signUp" style="color: white;">Đăng ký</button>
-                    </div>
-                </div>
-                <!-- </div> -->
-            </div>
-        </div>
-
-        <!-- ---------------------------- -->
         <section class="cart-items" id="cart-items">
             
         </section>
+        
+        <div class="empty-cart-message" id="empty-cart-message">
+            <div><i class="fa-regular fa-face-frown-open"></i></div>
+            Giỏ hàng trống !
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <h3>Tổng tiền:</h3>
+                <p id="total-amount"></p>
+            </div>
+        </div>
         
     </main>
 
     <script>
         const cartItemsElement = document.getElementById('cart-items');
-
+        const totalAmountElement = document.getElementById('total-amount');
+        const emptyCartMessageElement = document.getElementById('empty-cart-message');
+        const cartSummaryElement = document.querySelector('.cart-summary');
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        cart.forEach(item => {
-            const li = document.createElement('li');
-            li.classList.add('cart-item');
+        function formatCurrency(amount) {
+            // Thay thế dấu phân cách hàng nghìn
+            return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        }
 
-            li.innerHTML = `
-                <img src="assets/images/food.jpg" alt="${item.name}">
-                <div class="cart-item-details">
-                    <h2>${item.name}</h2>
-                    <p>${item.price}</p>
-                </div>
-                <div class="cart-item-actions">
-                    <button class="remove-item" data-id="${item.id}">Remove</button>
-                </div>
-            `;
-
-            cartItemsElement.appendChild(li);
-        });
-
-        //  xóa mặt hàng
-        cartItemsElement.addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-item')) {
-                const itemId = e.target.dataset.id;
-                // Xóa khỏi giỏ hàng trong LocalStorage
-                cart = cart.filter(item => item.id !== itemId);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                e.target.closest('.cart-item').remove();
+        function updateCartDisplay() {
+            cartItemsElement.innerHTML = ''; 
+            let totalAmount = 0; 
+            console.log(cart.length);
+            if (cart.length === 0) {
+                emptyCartMessageElement.style.display = 'block'; 
+                cartSummaryElement.style.display = 'none'; 
+                cartItemsElement.style.display = 'none';
+            } else {
+                emptyCartMessageElement.style.display = 'none';
+                cartSummaryElement.style.display = 'block';
+                cartItemsElement.style.display = 'block';
             }
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.classList.add('cart-item');
+                li.dataset.id = item.id;
+
+                li.innerHTML = `
+                    <img src="assets/images/food.jpg" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h2>${item.name}</h2>
+                        <p>${item.price}</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="decrease-quantity">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="increase-quantity">+</button>
+                        <button class="remove-item" data-id="${item.id}">Remove</button>
+                    </div>
+                `;
+
+                cartItemsElement.appendChild(li);
+
+               
+                const itemPrice = parseFloat(item.price.replace(/[^0-9.-]+/g, "")); 
+                totalAmount += itemPrice * item.quantity;
+            });
+
+            totalAmountElement.textContent = formatCurrency(totalAmount*1000);
+        }
+
+        updateCartDisplay();
+
+        
+        cartItemsElement.addEventListener('click', function (e) {
+            const itemId = e.target.closest('.cart-item').dataset.id;
+            let itemIndex = cart.findIndex(item => item.id === itemId);
+
+            if (e.target.classList.contains('increase-quantity')) {
+                cart[itemIndex].quantity = (cart[itemIndex].quantity || 1) + 1;
+            } else if (e.target.classList.contains('decrease-quantity')) {
+                cart[itemIndex].quantity = Math.max((cart[itemIndex].quantity || 1) - 1, 1);
+            } else if (e.target.classList.contains('remove-item')) {
+                cart = cart.filter(item => item.id !== itemId);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
         });
-
     </script>
-
-
-
-
-
 
 </body>
 

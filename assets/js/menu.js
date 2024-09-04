@@ -56,32 +56,69 @@ window.onload = function() {
 
 
 
-    // Xử lý sự kiện nhấp chuột vào biểu tượng giỏ hàng
+    
     const cartIcons = document.querySelectorAll('.fa-cart-plus');
     cartIcons.forEach(icon => {
-        icon.addEventListener('click', function () {
-            // Lấy thông tin mặt hàng từ phần tử chứa nó
+        icon.addEventListener('click', function() {
+            
             const item = this.closest('.slide-item');
             const itemId = item.dataset.id;
             const itemName = item.querySelector('.name').textContent;
             const itemPrice = item.querySelector('.price').textContent;
 
-            // Lấy giỏ hàng từ LocalStorage, nếu chưa có thì tạo mới
+           
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Kiểm tra xem mặt hàng đã tồn tại trong giỏ hàng chưa
+            
             const existingItemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
             if (existingItemIndex !== -1) {
-                // Nếu có rồi thì chỉ cập nhật số lượng hoặc thực hiện các hành động khác nếu cần
-                alert('Item already in cart!');
+
+                cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Đã thêm vào giỏ hàng');
                 return;
             }
+//------------
 
-            // Thêm mặt hàng vào giỏ hàng
-            cart.push({ id: itemId, name: itemName, price: itemPrice });
+            cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 });
             localStorage.setItem('cart', JSON.stringify(cart));
 
-            alert('Item added to cart!');
+            alert('Đã thêm vào giỏ hàng');
         });
     });
+
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('increase-quantity') || event.target.classList.contains('decrease-quantity')) {
+            const cartItem = event.target.closest('.cart-item');
+            const itemId = cartItem.dataset.id;
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
+
+            if (itemIndex !== -1) {
+                if (event.target.classList.contains('increase-quantity')) {
+                    cart[itemIndex].quantity = (cart[itemIndex].quantity || 1) + 1;
+                } else if (event.target.classList.contains('decrease-quantity')) {
+                    cart[itemIndex].quantity = Math.max((cart[itemIndex].quantity || 1) - 1, 1);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+        }
+    });
+
+    function updateCartDisplay() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        cartItems.forEach(item => {
+            const itemId = item.dataset.id;
+            const cartItem = cart.find(cartItem => cartItem.id === itemId);
+            if (cartItem) {
+                item.querySelector('.quantity').textContent = cartItem.quantity;
+            }
+        });
+    }
+
+    updateCartDisplay();
 };

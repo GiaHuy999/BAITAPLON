@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // Hiển thị nội dung tab đầu tiên và ẩn các nội dung còn lại
+
   $(".tab-content > div:not(:first-child)").hide();
 
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
   }, 5000); 
 
 
- // Thêm hiệu ứng di chuyển khi cuộn đến
+
  function animateOnScroll() {
   $(".main").each(function(index) {
       let elementTop = $(this).offset().top;
@@ -47,7 +47,7 @@ $(document).ready(function() {
   });
 }
 
-// Đặt lớp ẩn cho các phần tử .main khi trang tải
+// Đặt lớp ẩn
 $(".main").each(function(index) {
   if (index === 1) {
       $(this).addClass("section-hidden-second");
@@ -56,18 +56,17 @@ $(".main").each(function(index) {
   }
 });
 
-// Gọi hàm animateOnScroll khi trang tải và khi cuộn
+
 animateOnScroll();
 $(window).on("scroll", function() {
   animateOnScroll();
 });
 
-// ===
-// Xác định phần tử menu
-const menu = $(".menu");
-const initialOffsetTop = menu.offset().top; // Vị trí ban đầu của menu
 
-// Hàm kiểm tra và áp dụng lớp fixed
+const menu = $(".menu");
+const initialOffsetTop = menu.offset().top; 
+
+
 function checkFixedMenu() {
   if ($(window).scrollTop() > initialOffsetTop) {
       menu.addClass("menu-fixed");
@@ -76,9 +75,9 @@ function checkFixedMenu() {
   }
 }
 
-// Gọi hàm khi cuộn và khi trang tải
+
 $(window).on("scroll", checkFixedMenu);
-checkFixedMenu(); // Kiểm tra ngay khi trang tải
+checkFixedMenu();
 
 window.onscroll = function() { scrollFunction(); };
 

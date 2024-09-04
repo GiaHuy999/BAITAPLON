@@ -1,44 +1,44 @@
-body{
-  background-color: white;
-}
-header{
-  background-color:#e4d4cd ;
-}
-.logo span {
-  margin: 0 15px;
-  height: 100%;
-  width: 1.5px;
-  background-color: #c48c63;
-  display: block;
+
+header {
+    background-color: #e4d4cd;
 }
 
-.logo img{
-  width: 100px;
+.logo span {
+    margin: 0 15px;
+    height: 100%;
+    width: 1.5px;
+    background-color: #c48c63;
+    display: block;
 }
-.logo div{
-  font-size:190%;
-  color: #c48b64;
+
+.logo img {
+    width: 100px;
 }
-div.logo{
-  margin-right: 20px;
+
+.logo div {
+    font-size: 190%;
+    color: #c48b64;
 }
-/* cart.css */
+
+div.logo {
+    margin-right: 20px;
+}
+
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fff8f5;
     margin: 0;
     padding: 0;
 }
-
-#cart-content {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+main{
+    background-color: #d7b092;
+    width: 70%;
+    margin: 40px auto;
+    padding: 50px 0;
+    border-radius: 40px;
 }
+
 
 h1 {
     font-size: 24px;
@@ -47,8 +47,9 @@ h1 {
 
 .cart-items {
     list-style: none;
-    padding: 0 250px;
-    margin: 0;
+    padding: 40px 100px;
+    padding-bottom: 0;
+   
 }
 
 .cart-item {
@@ -89,15 +90,48 @@ h1 {
 }
 
 .cart-item-actions button {
-    background-color: #ff4d4d;
+    background-color: #915959;
     color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    margin: 0 10px;
 }
 
 .cart-item-actions button:hover {
-    background-color: #e60000;
+    background-color: #794949;
+}
+
+
+.cart-summary {
+    padding: 0 100px;
+    margin: 0;
+    margin-top: 25px;
+    
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+
+#total-amount {
+    color: #333;
+}
+.fa-face-frown-open{
+font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.empty-cart-message {
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
 }
