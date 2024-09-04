@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
+//=====menu second
   $(".tab-content > div:not(:first-child)").hide();
-
-
   $(".tab > li > a").click(function(event) {
       event.preventDefault();
       $(".tab > li").removeClass("active");
@@ -13,10 +12,9 @@ $(document).ready(function() {
       $(h).show();
   });
 
+//=====slider 5s
 
-  $(".slider").height($(".slider img").height() + 5);
-
-
+  $(".slider").height($(".slider img").height());
   $(".slider > div:not(:first-child)").hide();
 
   let current = 1;
@@ -30,7 +28,7 @@ $(document).ready(function() {
       current = next;
   }, 5000); 
 
-
+//=====scroll====
 
  function animateOnScroll() {
   $(".main").each(function(index) {
@@ -62,7 +60,7 @@ $(window).on("scroll", function() {
   animateOnScroll();
 });
 
-
+//======= fixed menu
 const menu = $(".menu");
 const initialOffsetTop = menu.offset().top; 
 
@@ -79,6 +77,7 @@ function checkFixedMenu() {
 $(window).on("scroll", checkFixedMenu);
 checkFixedMenu();
 
+//==========go to top
 window.onscroll = function() { scrollFunction(); };
 
       function scrollFunction() {

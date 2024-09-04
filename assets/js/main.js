@@ -7,7 +7,7 @@ window.onload = function() {
 
   setTimeout(function() {
     loadingScreen.style.display = 'none';
-  }, 20);
+  }, 2000);
 
   //========================ACCOUNT=============================
 
@@ -67,7 +67,7 @@ window.onload = function() {
     }
   }
 
-  // Gọi hàm kiểm tra khi trang load lần đầu
+
   handleFirstLoad();
 
   // //----------------xu li dang ki-----------------------
@@ -90,13 +90,13 @@ window.onload = function() {
       username: usernameValue,
       password: passwordValue,
     });
-
+    usernameValue.value = '';
+    passwordValue.value = '';
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('Tạo tài khoản thành công!');
 
-    usernameValue.value = '';
-    passwordValue.value = '';
+    
   }
 
   // //-----------------xu li dang nhap-----------------------
@@ -123,7 +123,8 @@ window.onload = function() {
       return;
     }
     //--------------after login-----------------------
-    window.location.href = 'menu.html';
+    alert('Đăng nhập thành công!');
+    window.location.href = 'index.html';
   }
   //=====================SLIDE============================
   const prevButton = document.querySelector('.fa-angle-left');

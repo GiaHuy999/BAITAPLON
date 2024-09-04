@@ -31,21 +31,4 @@ window.onload = function() {
         });
     });
     //----------------------------------------------------------
-    const slides = document.querySelectorAll('.slide-inner');
-    const menus = document.querySelectorAll('ul.menu > li');
-
-
-
-    slides[0].classList.add('active');
-    for (let menu of menus) {
-        menu.addEventListener('click', function() {
-            for (let slide of slides) {
-                slide.classList.remove('active');
-            }
-            let men = document.getElementById(`${menu.id}-inner`);
-            men.classList.add('active');
-            showPage(0);
-
-        });
-    }
 };

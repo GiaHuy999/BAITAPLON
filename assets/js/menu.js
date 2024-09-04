@@ -49,14 +49,7 @@ window.onload = function() {
         });
     }
 
-
-
-
-
-
-
-
-    
+//  Giỏ hàng
     const cartIcons = document.querySelectorAll('.fa-cart-plus');
     cartIcons.forEach(icon => {
         icon.addEventListener('click', function() {
@@ -65,6 +58,7 @@ window.onload = function() {
             const itemId = item.dataset.id;
             const itemName = item.querySelector('.name').textContent;
             const itemPrice = item.querySelector('.price').textContent;
+            const itemSrc = item.querySelector('img').getAttribute('src').replace(/^\//, '');
 
            
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -80,7 +74,7 @@ window.onload = function() {
             }
 //------------
 
-            cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 });
+            cart.push({ id: itemId,src:itemSrc, name: itemName, price: itemPrice, quantity: 1 });
             localStorage.setItem('cart', JSON.stringify(cart));
 
             alert('Đã thêm vào giỏ hàng');

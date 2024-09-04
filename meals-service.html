@@ -162,13 +162,11 @@
             duration: 1000,
         });
 
-        // Hiển thị thời gian thực
         function updateTime() {
             document.getElementById('current-time').innerText = moment().format('LTS');
         }
         setInterval(updateTime, 1000);
 
-        // Khởi tạo Flatpickr cho chọn ngày và giờ
         flatpickr('.datepicker', {
             enableTime: false,
             dateFormat: "Y-m-d",
