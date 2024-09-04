@@ -80,24 +80,17 @@ function checkFixedMenu() {
 $(window).on("scroll", checkFixedMenu);
 checkFixedMenu(); // Kiểm tra ngay khi trang tải
 
-const goToTopButton = $("#goToTop");
+window.onscroll = function() { scrollFunction(); };
 
-    // Hàm kiểm tra và hiển thị nút Go to Top
-    function checkScroll() {
-        if ($(window).scrollTop() > 300) { // Hiển thị nút khi cuộn xuống hơn 300px
-            goToTopButton.fadeIn();
-        } else {
-            goToTopButton.fadeOut();
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("goToTopButton").style.display = "block";
+            } else {
+                document.getElementById("goToTopButton").style.display = "none";
+            }
         }
-    }
 
-    // Cuộn về đầu trang khi nhấn nút
-    goToTopButton.on("click", function(event) {
-        event.preventDefault(); // Ngăn hành vi mặc định của thẻ <a>
-        $("html, body").animate({ scrollTop: 0 }, 600); // Cuộn mượt mà về đầu trang
-    });
-
-    // Gọi hàm khi cuộn và khi trang tải
-    $(window).on("scroll", checkScroll);
-    checkScroll(); // Kiểm tra ngay khi trang tải
+        document.getElementById("goToTopButton").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 });

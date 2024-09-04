@@ -540,51 +540,102 @@ section.main>div.frame-1>div:last-child>div:first-child {
 /*===============================================================*/
 
 /* footer */
-footer{
+footer {
+  font-family: PlayfairDisplay;
   background-color: #d7b092;
-  height: 300px;
-  font-size: 130%;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  padding-bottom: 0;
 }
 
-footer > section{
-  padding: 20px;
-  margin: 0 auto;
-  background-color: white;
-  height: 100%;
-  width: 90%;
-}
-.footer{
+.footer-container {
+  padding: 0 100px;
   display: flex;
-  text-decoration: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.footer-section {
+
+  min-width: 130px;
+
+}
+
+.footer-section h4 {
+  font-family: PlayfairDisplay;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.footer-section ul {
   list-style-type: none;
+  padding: 0;
 }
-.footer > li{
-  padding: 0 10px;
+
+.footer-section ul li {
+  font-family: PlayfairDisplay;
+  margin-bottom: 10px;
 }
-.copyright{
-  text-align: center;
-  padding: 10px;
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #8f532f;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  font-family: PlayfairDisplay;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #ffffff;
+ justify-content: center;
+}
+
+.footer-bottom a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.social{
+  font-size: 20px;
+}
+.footer-bottom a:hover {
+  color: #8f532f;
 }
 
 
-.go-to-top {
+.fixed-buttons {
   position: fixed;
-  bottom: 20px; /* Khoảng cách từ dưới cùng */
-  right: 20px; /* Khoảng cách từ bên phải */
-  background-color: #c48c64; /* Màu nền của nút */
-  color: #fff; /* Màu chữ của nút */
-  padding: 11.5px 15px;
+  bottom: 30px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fixed-buttons button {
+  background-color: #D3A373;
+  border: none;
+  padding: 11px 12.5px;
   border-radius: 50%;
-  display: none; /* Ẩn nút khi chưa cuộn xuống đủ */
-  text-align: center;
+  color: white;
   cursor: pointer;
-  z-index: 1000; /* Đảm bảo nút nằm trên các phần tử khác */
+  font-size: 25px;
 }
 
-.go-to-top:hover {
-  background-color: #555; /* Thay đổi màu nền khi di chuột qua nút */
-}
-
-.go-to-top i {
-  font-size: 20px; /* Kích thước biểu tượng */
+#goToTopButton {
+  display: none; /* Hidden by default */
 }
