@@ -125,11 +125,6 @@ window.onload = function() {
     //--------------after login-----------------------
     window.location.href = 'menu.html';
   }
-  //======================================================
-
-
-
-
   //=====================SLIDE============================
   const prevButton = document.querySelector('.fa-angle-left');
   const nextButton = document.querySelector('.fa-angle-right');
@@ -169,101 +164,53 @@ window.onload = function() {
     }
   });
   //--------------------------------------------------------
+  document.getElementById('submit-feedback').addEventListener('click', function() {
+    // Lấy giá trị từ các input
+    const name = document.getElementById('feedback-name').value;
+    const email = document.getElementById('feedback-email').value;
+    const message = document.getElementById('feedback-message').value;
 
-}
+    // Kiểm tra nếu các trường đều được điền
+    if (name && email && message) {
+      // Tạo phần tử đánh giá mới
+      const newFeedback = document.createElement('div');
+      newFeedback.classList.add('feedback-item');
+      newFeedback.innerHTML = `<h4>${name}</h4><p>${message}</p>`;
 
+      // Thêm phần tử đánh giá mới lên trên cùng
+      const feedbackContainer = document.getElementById('view-feedback');
+      feedbackContainer.insertBefore(newFeedback, feedbackContainer.firstChild);
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const locationElement = document.getElementById('location');
-//   const tableQuantityElement = document.getElementById('table-quantity');
-//   const appetizersElement = document.getElementById('appetizers');
-//   const mainCoursesElement = document.getElementById('main-courses');
-//   const dessertsElement = document.getElementById('desserts');
-//   const winesElement = document.getElementById('wines');
-//   const photoConceptElement = document.getElementById('photo-concept');
-//   const totalAmountElement = document.getElementById('total-amount');
-
-//   let cart = {
-//     location: null,
-//     tables: {
-//       quantity: 0,
-//       appetizers: null,
-//       mainCourses: null,
-//       desserts: null,
-//       wines: null
-//     },
-//     photoStudio: {
-//       concept: null
-//     },
-//     totalAmount: 0
-//   };
-
-//   function updateCartDisplay() {
-//     if (cart.location) {
-//       locationElement.innerHTML = `<p>${cart.location}</p>`;
-//     } else {
-//       locationElement.innerHTML = `<p>Chưa chọn địa điểm.</p><a href="abc.html" class="button">Chọn địa điểm</a>`;
-//     }
-
-//     tableQuantityElement.textContent = cart.tables.quantity;
-//     appetizersElement.textContent = cart.tables.appetizers || 'Chưa chọn';
-//     mainCoursesElement.textContent = cart.tables.mainCourses || 'Chưa chọn';
-//     dessertsElement.textContent = cart.tables.desserts || 'Chưa chọn';
-//     winesElement.textContent = cart.tables.wines || 'Chưa chọn';
-//     photoConceptElement.textContent = cart.photoStudio.concept || 'Chưa chọn';
-
-//     // Giả lập tính toán tổng số tiền
-//     cart.totalAmount = cart.tables.quantity * 100; // Ví dụ: 100 là giá mỗi bàn tiệc
-//     totalAmountElement.textContent = `$${cart.totalAmount.toFixed(2)}`;
-//   }
-
-//   // Các hàm xử lý chỉnh sửa và cập nhật thông tin
-//   document.getElementById('edit-tables').addEventListener('click', function() {
-//     // Mở cửa sổ chỉnh sửa bàn tiệc (có thể là một modal)
-//     alert('Chức năng chỉnh sửa bàn tiệc chưa được triển khai.');
-//   });
-
-//   document.getElementById('edit-photo-studio').addEventListener('click', function() {
-//     // Mở cửa sổ chỉnh sửa studio chụp ảnh (có thể là một modal)
-//     alert('Chức năng chỉnh sửa studio chụp ảnh chưa được triển khai.');
-//   });
-
-//   document.getElementById('checkout-button').addEventListener('click', function() {
-//     alert('Chức năng thanh toán chưa được triển khai.');
-//   });
-
-//   updateCartDisplay();
-// });
-// let list = document.querySelectorAll('.center .list .item');
-// list.forEach(item => {
-//   item.addEventListener('click', function(event) {
-//     if (event.target.classList.contains('add')) {
-//       var itemNew = item.cloneNode(true);
-//       let checkIsset = false;
-
-//       let listCart = document.querySelectorAll('.cart .listCart .item');
-//       listCart.forEach(cart => {
-//         if (cart.getAttribute('data-key') == itemNew.getAttribute('data-key')) {
-//           checkIsset = true;
-//           cart.classList.add('danger');
-//           setTimeout(function() {
-//             cart.classList.remove('danger');
-//           }, 1000)
-//         }
-//       })
-//       if (checkIsset == false) {
-//         document.querySelector('.cart .listCart').appendChild(itemNew);
-//       }
-//     }
-//   })
-// })
-
-function Remove(key) {
-  let listCart = document.querySelectorAll('.cart .listCart .item');
-  listCart.forEach(item => {
-    if (item.getAttribute('data-key') == key) {
-      item.remove();
-      return;
+      // Xóa nội dung trong các input sau khi gửi
+      document.getElementById('feedback-name').value = '';
+      document.getElementById('feedback-email').value = '';
+      document.getElementById('feedback-message').value = '';
+    } else {
+      alert('Vui lòng điền đầy đủ thông tin.');
     }
-  })
+  });
+
+
+  document.getElementById("scrollToTuVan").addEventListener("click", function() {
+    const targetElement = document.getElementById("tu-van");
+    const offset = 50;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: targetPosition - offset,
+      behavior: "smooth"
+    });
+  });
+
+  window.addEventListener("scroll", function() {
+      const targetElement = document.getElementById("special-element");
+      const imageElement = document.getElementById("special-image");
+
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const scrollPosition = window.pageYOffset + window.innerHeight;
+      if (scrollPosition > targetPosition ) 
+          imageElement.style.display = "block";
+      else 
+           imageElement.style.display = "none";
+  });
 }
+

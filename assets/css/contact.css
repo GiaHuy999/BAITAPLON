@@ -1,96 +1,85 @@
-.content>div {
-  position: relative;
-}
+  .content>div {
+    position: relative;
+  }
 
-.infor-contact {
-  padding: 0;
-  width: 50%;
-}
+  .infor-contact {
+    padding: 0;
+    width: 50%;
+  }
 
-.content>div {
-  display: flex;
-  position: relative;
-  width: 70%;
-  height: 100%;
-  background-color: #fff8f5;
-  margin: 0 auto;
-  padding-top: 60px;
-  font-size: 20px;
-}
+  .content>div {
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    background-color: #fff8f5;
+    margin: 0 auto;
+    padding-top: 60px;
+    font-size: 20px;
+  }
 
-.infor-contact>h1 {
-  font-size: 30px;
+  .infor-contact>h1 {
+    font-size: 30px;
+    padding: 20px 0;
+  }
 
-}
-
-.infor-contact>div {
-  padding: 15px 0;
-}
+  .infor-contact>div {
+    padding: 15px 0;
+  }
 
 
-.contact-form {
-  display: flex;
-  position: relative !important;
-  ;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 50%;
-  padding-top: 20px;
-}
+  .contact-form {
+    display: flex;
+    position: relative !important;
+    ;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-top: 20px;
+  }
 
-.contact-form>input {
-  width: 100%;
-  height: 40px;
-  margin: 8px 0;
-  outline: none;
+  .contact-form>input {
+    width: 100%;
+    height: 40px;
+    margin: 8px 0;
+    outline: none;
 
-  font-family: "Gilroy", sans-serif;
-  font-size: 16px;
-  padding-left: 10px;
-  border-radius: 8px;
-  border: #e9ccba solid 1px;
-  box-sizing: border-box;
-}
+    font-family: "Gilroy", sans-serif;
+    font-size: 16px;
+    padding-left: 10px;
+    border-radius: 8px;
+    border: #e9ccba solid 1px;
+    box-sizing: border-box;
+  }
 
-.contact-form>textarea {
-  width: 100%;
-  min-height: 100px;
-  min-width: 100px;
-  height: 100px;
-  margin: 8px 0;
-  position: relative;
-  box-sizing: border-box;
-  outline: none;
-  font-family: "Playfair Display";
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 8px;
-  border: #e9ccba solid 1px;
-}
+  .contact-form>textarea {
+    width: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    height: 100px;
+    margin: 8px 0;
+    position: relative;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Playfair Display";
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: #e9ccba solid 1px;
+  }
 
 /* Đảm bảo rằng phần tử chứa bản đồ .map căn giữa nội dung bên trong */
 .map {
   display: flex;
-  /* Sử dụng flexbox để căn giữa các phần tử con */
   justify-content: center;
-  /* Căn giữa theo chiều ngang */
   width: 100%;
-  /* Chiếm toàn bộ chiều rộng của phần tử chứa */
-  padding: 20px 0 0 0;
-  /* Padding phía trên và dưới */
+  
 }
 
-/* Đảm bảo rằng bản đồ #map chiếm toàn bộ chiều rộng của phần tử chứa nó */
+
 #map {
   width: 70%;
-  /* Chiếm 70% chiều rộng của phần tử chứa .map */
   height: 400px;
-  /* Chiều cao cố định */
   box-sizing: border-box;
-  /* Để padding không làm thay đổi kích thước tổng thể */
-  margin: 0;
-  /* Loại bỏ margin để bản đồ không bị lệch */
-
-  .chinhsach {
-    background-color: #fff8f5;s
-  }
+  margin-bottom: 30px;
+}

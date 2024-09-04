@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/aboutus.css">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/menu.css"/>
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> -->
 
@@ -129,21 +130,47 @@
         </div>
 
         <!-- ---------------------------- -->
-        <section class="cart-product">
-            <div>
-                
-            </div>
-            <div>
-
-            </div>
-            <div>
-                
-            </div>
+        <section class="cart-items" id="cart-items">
+            
         </section>
         
     </main>
 
+    <script>
+        const cartItemsElement = document.getElementById('cart-items');
 
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.classList.add('cart-item');
+
+            li.innerHTML = `
+                <img src="assets/images/food.jpg" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h2>${item.name}</h2>
+                    <p>${item.price}</p>
+                </div>
+                <div class="cart-item-actions">
+                    <button class="remove-item" data-id="${item.id}">Remove</button>
+                </div>
+            `;
+
+            cartItemsElement.appendChild(li);
+        });
+
+        //  xóa mặt hàng
+        cartItemsElement.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-item')) {
+                const itemId = e.target.dataset.id;
+                // Xóa khỏi giỏ hàng trong LocalStorage
+                cart = cart.filter(item => item.id !== itemId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                e.target.closest('.cart-item').remove();
+            }
+        });
+
+    </script>
 
 
 

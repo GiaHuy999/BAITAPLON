@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Bàn Tiệc Cưới</title>
+
+    <link rel="stylesheet" href="assets/css/meals-service.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="icon" href="assets/images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="loading-screen">
+        <span class="loader"></span>
+    </div>
+    <header>
+        <nav>
+            <div class="toolbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo" />
+                    </a>
+                </div>
+                <div class="search">
+                    <input type="search" id="sea" placeholder="Tìm kiếm…" />
+                    <button id="search" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div>
+                    <ul class="login">
+                        <li id="nut-dang-nhap">
+                            <a href="#"><i class="fa-solid fa-user icons"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-cart-shopping icons"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li class="sub">
+                    <a href="#">Dịch vụ</a>
+                    <ul class="menu dropdown">
+                        <li><a href="#">s1</a></li>
+                        <li><a href="#">s2</a></li>
+                        <li><a href="#">s3</a></li>
+                    </ul>
+                </li>
+                <li class="sub"><a href="menu.html">Thực đơn</a></li>
+                <li class="sub"><a href="#">Tin tức</a></li>
+                <li class="sub"><a href="aboutus.html">Về chúng tôi</a></li>
+                <li class="sub"><a href="book-table.html">Đặt bàn</a></li>
+            </ul>
+        </nav>
+
+        <div class="banner">
+            <img src="assets/images/banner-1.jpg" />
+        </div>
+
+        <div class="toolbar-menu">
+            <h1>ĐẶT BÀN TIỆC CƯỚI</h1>
+            <div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li>/</li>
+                    <li>Đặt bàn</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="content">
+            <div>
+                <div class="booking-info">
+                    <h1>ĐẶT BÀN TIỆC CƯỚI CỦA BẠN</h1>
+                    <p>Chúng tôi sẽ giúp bạn tổ chức một buổi tiệc cưới đáng nhớ. Vui lòng điền thông tin dưới đây để
+                        đặt bàn.</p>
+                </div>
+                <div class="booking-form">
+                    <input type="text" id="name" placeholder="Họ và tên" required>
+                    <input type="number" id="phone" placeholder="Số điện thoại" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="date" placeholder="Chọn ngày" class="datepicker" required>
+                    <input type="text" id="time" placeholder="Chọn giờ" class="timepicker" required>
+                    <textarea id="message" placeholder="Nội dung"></textarea>
+                    <button type="submit">Gửi Đặt Bàn</button>
+                </div>
+                <div class="current-time">
+                    <p>Thời gian hiện tại: <span id="current-time"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <a href="index.html"><img src="assets/images/logo.png" alt="Trống Đồng Palace Logo"
+                        class="footer-logo"></a>
+            </div>
+            <div class="footer-section">
+                <h4>Liên hệ</h4>
+                <ul>
+                    <li>Nhơn Đức, Nhà Bè, TP. Hồ Chí Minh</li>
+                    <li>h&n@gmail.com</li>
+                    <li>0123456789</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Mục lục</h4>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="news.html">Tin tức</a></li>
+                    <li><a href="aboutus.html">Về chúng tôi</a></li>
+                    <li><a href="book-table.html">Đặt bàn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Chính sách</h4>
+                <ul>
+                    <li><a href="#">Chính sách thanh toán</a></li>
+                    <li><a href="#">Chính sách ưu đãi</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách chung</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h4>Mạng xã hội</h4>
+                <ul>
+                    <li><a href="#" class="social"><i class="fab fa-google"></i></a></li>
+                    <li><a href="#" class="social"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="social"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Designed by <a href="#">H&N</a></p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+
+        // Hiển thị thời gian thực
+        function updateTime() {
+            document.getElementById('current-time').innerText = moment().format('LTS');
+        }
+        setInterval(updateTime, 1000);
+
+        // Khởi tạo Flatpickr cho chọn ngày và giờ
+        flatpickr('.datepicker', {
+            enableTime: false,
+            dateFormat: "Y-m-d",
+        });
+        flatpickr('.timepicker', {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+        });
+    </script>
+</body>
+
+</html>
