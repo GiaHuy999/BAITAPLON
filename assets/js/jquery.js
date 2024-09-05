@@ -45,6 +45,7 @@ $(document).ready(function() {
   });
 }
 
+
 // Đặt lớp ẩn
 $(".main").each(function(index) {
   if (index === 1) {

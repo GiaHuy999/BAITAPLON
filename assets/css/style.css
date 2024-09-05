@@ -204,7 +204,7 @@ nav>.menu {
 /* =====section======= */
 .section-hidden {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateY(100px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -216,7 +216,7 @@ nav>.menu {
 
 .section-hidden-second {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateY(100px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
