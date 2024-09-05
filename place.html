@@ -9,19 +9,8 @@
         <link rel="stylesheet" href="assets/css/place.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/login.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="icon" href="assets/images/icon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
         <script src="assets/js/main.js" defer></script>
-        <!-- Thêm liên kết đến CSS và font-awesome -->
-        <link rel="stylesheet" href="assets/css/style.css"> <!-- Đảm bảo đường dẫn chính xác -->
-        <link rel="stylesheet" href="assets/css/place.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -96,22 +85,21 @@
                 <a href="#link1" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 1">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 1: ABC</span>
+                        <span>Thủ Đức</span>
                     </div>
                 </a>
                 <a href="#link2" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 2">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 2: DEF</span>
+                        
+                        <span>Quận 1</span>
                     </div>
                 </a>
                 <a href="#link3" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 3">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 3: GHI</span>
+                        
+                        <span>Quận 2</span>
                     </div>
                 </a>
             </div>
@@ -119,22 +107,22 @@
                 <a href="#link4" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 4">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 4: JKL</span>
+                        
+                        <span>Quận 3</span>
                     </div>
                 </a>
                 <a href="#link5" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 5">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 5: MNO</span>
+                        
+                        <span>Quận 4</span>
                     </div>
                 </a>
                 <a href="#link6" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 6">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 6: PQR</span>
+                        
+                        <span>Hóc Môn</span>
                     </div>
                 </a>
             </div>
@@ -142,22 +130,22 @@
                 <a href="#link7" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 7">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 7: STU</span>
+                        
+                        <span>Nhà Bè</span>
                     </div>
                 </a>
                 <a href="#link8" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 8">
                     <div class="gallery-info">
                         <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 8: VWX</span>
+                        <span>An Giang</span>
                     </div>
                 </a>
                 <a href="#link9" class="gallery-item">
                     <img src="assets/images/sanh.jpg" alt="Địa điểm 9">
                     <div class="gallery-info">
-                        <i class="fa-solid fa-location-pin"></i>
-                        <span>Địa điểm 9: YZA</span>
+                       
+                        <span>Cần Thơ</span>
                     </div>
                 </a>
             </div>
@@ -211,32 +199,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js" defer></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-        });
-
-        // Hiển thị thời gian thực
-        function updateTime() {
-            document.getElementById('current-time').innerText = moment().format('LTS');
-        }
-        setInterval(updateTime, 1000);
-
-        // Khởi tạo Flatpickr cho chọn ngày và giờ
-        flatpickr('.datepicker', {
-            enableTime: false,
-            dateFormat: "Y-m-d",
-        });
-        flatpickr('.timepicker', {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-        });
-    </script>
-    <div class="current-time">
-        <span id="current-time"></span>
-    </div>
 </body>
 
 </html>
