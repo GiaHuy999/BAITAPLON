@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt Bàn Tiệc Cưới</title>
+    <title>Dream Wedding</title>
 
     <link rel="stylesheet" href="assets/css/meals-service.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -154,29 +154,7 @@
     </footer>
 
     <script src="assets/js/main.js" defer></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-        });
-
-        function updateTime() {
-            document.getElementById('current-time').innerText = moment().format('LTS');
-        }
-        setInterval(updateTime, 1000);
-
-        flatpickr('.datepicker', {
-            enableTime: false,
-            dateFormat: "Y-m-d",
-        });
-        flatpickr('.timepicker', {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-        });
-    </script>
-    <div class="current-time">
-        <span id="current-time"></span>
-    </div>
+    
 </body>
 
 </html>
