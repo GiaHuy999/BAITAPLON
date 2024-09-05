@@ -44,11 +44,17 @@
     .carousel-inner>div {
         min-width: 50%;
     }
+    div.slider{
+        display: none;
+    }
 
 }
 
 @media (max-width: 480px) {
 
+    div.slider{
+        display: none;
+    }
     ul.menu {
 
         display: none;
